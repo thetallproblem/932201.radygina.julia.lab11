@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "PassUsingViewData";
+    var data = ViewData["data"] as NumOperations;
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p class="bold">Rand Value First: @data.firstNum</p>
+<p class="bold">Rand Value Second: @data.secondNum</p>
+
+<h3>Add:</h3>
+<p>@data.firstNum + @data.secondNum = @data.summ</p>
+
+<h3>Sub:</h3>
+<p>@data.firstNum - @data.secondNum = @data.sub</p>
+
+<h3>Mult:</h3>
+<p>@data.firstNum * @data.secondNum = @data.mult</p>
+
+<h3>Div:</h3>
+<p>
+    @data.firstNum / @data.secondNum =
+
+    @if (@data.div == -1)
+    {
+        @: Error
+    }
+    else
+    {
+        @data.div
+    }
+</p>

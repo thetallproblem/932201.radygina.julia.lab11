@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "AcessServiceDirectly";
+    @inject Lab11.Services.IGetData GetData;
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p class="bold">Rand Value First: @GetData.firstNum</p>
+<p class="bold">Rand Value Second: @GetData.secondNum</p>
+
+<h2>Add:</h2>
+<p>@GetData.firstNum + @GetData.secondNum = @GetData.Summ()</p>
+
+<h2>Sub:</h2>
+<p>@GetData.firstNum - @GetData.secondNum = @GetData.Sub()</p>
+
+<h2>Mult:</h2>
+<p>@GetData.firstNum * @GetData.secondNum = @GetData.Mult()</p>
+
+<h2>Div:</h2>
+<p>
+    @GetData.firstNum / @GetData.secondNum =
+
+    @if (@GetData.Div() == -1)
+    {
+        @: Error
+    }
+    else
+    {
+        @GetData.Div()
+    }
+</p>
